@@ -13,36 +13,18 @@
      <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
      <script type="text/babel">
        class Greeting extends React.Component {
-         constructor() {
-           super()
-
-           this.state = { word: "What's up" }
-           this.onClickHandler = this.onClickHandler.bind(this);
-         }
-
-         onClickHandler() {
-           this.setState({
-             word: this.props.text
-           })
-         }
-
          render() {
            return (
              <div>
-               <h1>{ this.props.text }</h1>
-               <h3>{ this.state.word }</h3>
-               <div onClick={this.onClickHandler}>click</div>
+               <h1>Hello World!</h1>
              </div>
            );
          }
        }
 
        ReactDOM.render(
-         <div>
-            <Greeting text="Hello IDEO" />
-            <Greeting text="Hello New York" />
-         </div>, document.getElementById('app')
+         <Greeting />, document.getElementById('app')
        );
-     </script>
+    </script>
   </body>
 </html>
