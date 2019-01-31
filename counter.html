@@ -1,3 +1,30 @@
+<!--
+
+Q: In your own words, explain the essential differences between props and state in
+React. Which is immutable or read-only, and which changes? Submit your response
+in the submission text area and discuss the answer with your mentor.
+
+* We use props to send data to components. Props are immutable
+
+* State is like a data store to the react component. It is mostly used to
+update the component when user performed an action. State data is mutable
+
+
+Build upon your component from the previous checkpoint's assignment, add in
+state and props to make sure you have fully mastered these core React properties.
+
+
+
+
+-->
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -18,7 +45,8 @@
         constructor(props){
           super(props);
           this.state = {
-            number: 1
+            number: 1,
+            module: "Frontend Frameworks"
           }
         }
 
@@ -27,8 +55,10 @@
           return (
             <div>
               <img src={this.props.image} alt="Bloc Logo"/>
-              <h2>Current program: {this.props.label}</h2>
-              <h3>Current week: {this.state.number}</h3>
+              <h2>Current Program: {this.props.label}</h2>
+              <h3>Current Week: {this.state.number}</h3>
+              <h3>Current Module: {this.state.module} </h3>
+              <h3>Student Name: {this.props.fullName} </h3>
               <p>Current Date: {this.props.date.toLocaleDateString()}</p>
             </div>
           );
@@ -40,6 +70,7 @@
       const info = {
         date: new Date(),
         image: 'https://avatars0.githubusercontent.com/u/1441485?v=4&s=280',
+        fullName: "Rafael Sergio Smtih"
       }
 
 
@@ -53,7 +84,10 @@
       ReactDOM.render(
         <Counter
           date={info.date}
-          image={info.image}/>,document.getElementById('app')
+          image={info.image}
+          fullName={info.fullName}/>
+          ,document.getElementById('app')
+
       );
 
     </script>
